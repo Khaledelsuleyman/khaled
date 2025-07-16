@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تصميم وتطوير المواقع الإلكترونية - خدمات احترافية</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffd700;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ffd700;
+            color: #333;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .cta-button:hover {
+            background: #ffed4e;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            background: white;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-item {
+            background: #f8f9fa;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .portfolio-image {
+            height: 200px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .portfolio-info {
+            padding: 1.5rem;
+        }
+
+        /* Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: white;
+        }
+
+        .testimonial-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 1rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        /* Pricing Section */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .pricing-card.featured {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #667eea;
+            margin: 1rem 0;
+        }
+
+        .pricing-card.featured .price {
+            color: #ffd700;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .pricing-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .pricing-card.featured .pricing-features li {
+            border-color: rgba(255,255,255,0.3);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            padding: 3rem 0 1rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #ffd700;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #ffd700;
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+        }
+
+        body.dark-mode .hero {
+            background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+        }
+
+        body.dark-mode header {
+            background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+        }
+
+        body.dark-mode section {
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+        }
+
+        body.dark-mode .portfolio {
+            background-color: #2d3748;
+        }
+
+        body.dark-mode .testimonials {
+            background-color: #2d3748;
+        }
+
+        body.dark-mode .service-card,
+        body.dark-mode .portfolio-item,
+        body.dark-mode .feature-item,
+        body.dark-mode .testimonial-card,
+        body.dark-mode .pricing-card,
+        body.dark-mode .contact-form {
+            background-color: #2d3748;
+            color: #f0f0f0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        body.dark-mode .testimonial-card {
+            background-color: #1a1a1a;
+        }
+
+        body.dark-mode .portfolio-image {
+            background: linear-gradient(45deg, #2d3748, #4a5568);
+        }
+
+        body.dark-mode .form-group input,
+        body.dark-mode .form-group textarea,
+        body.dark-mode .form-group select {
+            background-color: #4a5568;
+            color: #f0f0f0;
+            border-color: #4a5568;
+        }
+
+        body.dark-mode .form-group input:focus,
+        body.dark-mode .form-group textarea:focus,
+        body.dark-mode .form-group select:focus {
+            border-color: #667eea;
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+
+        .theme-toggle:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Login Modal */
+        .login-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-modal.show {
+            display: flex;
+        }
+
+        .login-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 400px;
+            position: relative;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        body.dark-mode .login-form {
+            background: #2d3748;
+            color: #f0f0f0;
+        }
+
+        .login-form h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+        body.dark-mode .login-form h2 {
+            color: #f0f0f0;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #999;
+        }
+
+        body.dark-mode .close-btn {
+            color: #f0f0f0;
+        }
+
+        .login-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s;
+            margin-left: 1rem;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .nav-right {
+                gap: 0.5rem;
+            }
+
+            .login-btn {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .services-grid,
+            .portfolio-grid,
+            .features-grid,
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card.featured {
+                transform: none;
+            }
+
+            .login-form {
+                width: 95%;
+                margin: 0 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .hero {
+                padding: 100px 0 60px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">🌐 تصميم ويب</div>
+            <ul class="nav-links">
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#services">خدماتنا</a></li>
+                <li><a href="#about">نبذة عنا</a></li>
+                <li><a href="#portfolio">أعمالنا</a></li>
+                <li><a href="#features">مميزاتنا</a></li>
+                <li><a href="#testimonials">آراء العملاء</a></li>
+                <li><a href="#pricing">الأسعار</a></li>
+                <li><a href="#contact">تواصل معنا</a></li>
+            </ul>
+            <div class="nav-right">
+                <button class="theme-toggle" onclick="toggleTheme()" title="تبديل الوضع">🌙</button>
+                <button class="login-btn" onclick="showLoginModal()">تسجيل الدخول</button>
+                <button class="mobile-menu-toggle">☰</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>نحول أفكارك إلى مواقع إلكترونية رائعة</h1>
+            <p>نقدم خدمات تصميم وتطوير المواقع الإلكترونية بأحدث التقنيات وأعلى معايير الجودة</p>
+            <a href="#contact" class="cta-button">ابدأ مشروعك الآن</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">خدماتنا</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">👤</div>
+                    <h3>المواقع الشخصية</h3>
+                    <p>تصميم مواقع شخصية احترافية تعكس شخصيتك وتميزك في مجال عملك</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>مواقع الشركات</h3>
+                    <p>مواقع مؤسسية متطورة تعرض خدمات شركتك بطريقة احترافية وجذابة</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛒</div>
+                    <h3>المتاجر الإلكترونية</h3>
+                    <p>متاجر إلكترونية متكاملة مع أنظمة دفع آمنة وإدارة سهلة للمنتجات</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">نبذة عنا</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>نحن فريق من المطورين والمصممين المحترفين المتخصصين في تصميم وتطوير المواقع الإلكترونية والتطبيقات. منذ انطلاقنا، نسعى لتقديم حلول تقنية مبتكرة تلبي احتياجات عملائنا وتتجاوز توقعاتهم.</p>
+                    
+                    <p>نؤمن بأن التصميم الجيد هو مزيج من الجمال والوظيفة، ولذلك نركز على إنشاء مواقع ليست فقط جذابة بصرياً، بل أيضاً سهلة الاستخدام وسريعة التحميل. نستخدم أحدث التقنيات والأدوات لضمان تقديم منتجات عالية الجودة.</p>
+                    
+                    <p>فريقنا مكون من خبراء في مختلف المجالات التقنية، من تصميم واجهات المستخدم إلى تطوير الخوادم وتحسين محركات البحث. نحن ملتزمون بتقديم خدمة عملاء متميزة ودعم مستمر لضمان نجاح مشاريعكم.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">مشروع منجز</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">30+</div>
+                        <div class="stat-label">عميل راضٍ</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">3+</div>
+                        <div class="stat-label">سنوات خبرة</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">دعم فني</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">أعمالنا</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">موقع شركة تقنية</div>
+                    <div class="portfolio-info">
+                        <h3>موقع شركة تقنية</h3>
+                        <p>تصميم موقع احترافي لشركة تقنية مع لوحة تحكم متقدمة</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">متجر إلكتروني</div>
+                    <div class="portfolio-info">
+                        <h3>متجر إلكتروني</h3>
+                        <p>متجر إلكتروني متكامل مع نظام إدارة المخزون والمبيعات</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">موقع شخصي</div>
+                    <div class="portfolio-info">
+                        <h3>موقع شخصي</h3>
+                        <p>موقع شخصي أنيق لعرض الأعمال والخدمات المهنية</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">لماذا نحن؟</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">⚡</div>
+                    <h3>سرعة في التنفيذ</h3>
+                    <p>نلتزم بالمواعيد المحددة ونسلم مشاريعك في الوقت المناسب</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🎨</div>
+                    <h3>تصميم احترافي</h3>
+                    <p>تصاميم عصرية وجذابة تواكب أحدث الاتجاهات في عالم التصميم</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🛠️</div>
+                    <h3>دعم فني متواصل</h3>
+                    <p>نوفر دعماً فنياً مستمراً لضمان عمل موقعك بأفضل أداء</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📱</div>
+                    <h3>متوافق مع جميع الأجهزة</h3>
+                    <p>مواقع متجاوبة تعمل بسلاسة على الهاتف والتابلت والكمبيوتر</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">آراء عملائنا</h2>
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "خدمة ممتازة وتصميم رائع! تم تسليم الموقع في الموعد المحدد وبجودة عالية جداً"
+                </div>
+                <div class="testimonial-author">- أحمد محمد، مدير شركة التقنية المتطورة</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "فريق محترف ومتعاون، ساعدوني في إنشاء متجر إلكتروني ناجح زاد من مبيعاتي بشكل كبير"
+                </div>
+                <div class="testimonial-author">- فاطمة أحمد، صاحبة متجر الأزياء العصرية</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 class="section-title">باقاتنا والأسعار</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>الباقة الأساسية</h3>
+                    <div class="price">999 ريال</div>
+                    <ul class="pricing-features">
+                        <li>موقع من 5 صفحات</li>
+                        <li>تصميم متجاوب</li>
+                        <li>نموذج تواصل</li>
+                        <li>دعم فني لمدة شهر</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">اطلب الآن</a>
+                </div>
+                <div class="pricing-card featured">
+                    <h3>الباقة المتقدمة</h3>
+                    <div class="price">1999 ريال</div>
+                    <ul class="pricing-features">
+                        <li>موقع من 10 صفحات</li>
+                        <li>لوحة تحكم</li>
+                        <li>تحسين محركات البحث</li>
+                        <li>دعم فني لمدة 3 أشهر</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">الأكثر طلباً</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>الباقة الشاملة</h3>
+                    <div class="price">3999 ريال</div>
+                    <ul class="pricing-features">
+                        <li>موقع غير محدود الصفحات</li>
+                        <li>متجر إلكتروني</li>
+                        <li>تطبيق جوال</li>
+                        <li>دعم فني لمدة سنة</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">اطلب الآن</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">تواصل معنا</h2>
+            <form class="contact-form" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">الاسم الكامل</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">البريد الإلكتروني</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">رقم الهاتف</label>
+                    <input type="tel" id="phone" name="phone" placeholder="0536 445 94 10" required>
+                </div>
+                <div class="form-group">
+                    <label for="service">نوع الخدمة المطلوبة</label>
+                    <select id="service" name="service" required style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                        <option value="">اختر نوع الخدمة</option>
+                        <option value="personal">موقع شخصي</option>
+                        <option value="company">موقع شركة</option>
+                        <option value="ecommerce">متجر إلكتروني</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">تفاصيل المشروع</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">إرسال الطلب</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>نبذة عنا</h3>
+                    <p>نحن فريق من المطورين والمصممين المحترفين في مجال تصميم وتطوير المواقع الإلكترونية. نقدم حلولاً تقنية مبتكرة تلبي احتياجات عملائنا بأعلى معايير الجودة والاحترافية.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>تواصل معنا</h3>
+                    <p>📞 <a href="tel:+905364459410" style="color: #ffd700; text-decoration: none;">0536 445 94 10</a></p>
+                    <p>📧 khaledelsuleyman1@gmail.com</p>
+                    <p>📍 عنتاب، تركيا</p>
+                </div>
+                <div class="footer-section">
+                    <h3>خدماتنا</h3>
+                    <p>تصميم المواقع الإلكترونية</p>
+                    <p>تطوير المتاجر الإلكترونية</p>
+                    <p>تحسين محركات البحث</p>
+                    <p>تطوير التطبيقات</p>
+                </div>
+                <div class="footer-section">
+                    <h3>تابعنا</h3>
+                    <div class="social-links">
+                        <a href="#" title="فيسبوك">📘</a>
+                        <a href="#" title="تويتر">🐦</a>
+                        <a href="#" title="إنستغرام">📷</a>
+                        <a href="#" title="لينكد إن">💼</a>
+                    </div>
+                </div>
+            </div>
+            <div style="border-top: 1px solid #555; padding-top: 1rem; margin-top: 2rem;">
+                <p>&copy; 2025 جميع الحقوق محفوظة - تصميم وتطوير المواقع الإلكترونية</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="login-modal">
+        <form class="login-form" onsubmit="handleLogin(event)">
+            <button type="button" class="close-btn" onclick="hideLoginModal()">&times;</button>
+            <h2>تسجيل الدخول</h2>
+            <div class="form-group">
+                <label for="username">اسم المستخدم أو الإيميل</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">كلمة المرور</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label style="display: flex; align-items: center; gap: 0.5rem;">
+                    <input type="checkbox" id="remember" name="remember">
+                    تذكرني
+                </label>
+            </div>
+            <button type="submit" class="submit-btn" style="width: 100%;">تسجيل الدخول</button>
+            <p style="text-align: center; margin-top: 1rem;">
+                <a href="#" style="color: #667eea; text-decoration: none;">نسيت كلمة المرور؟</a>
+            </p>
+        </form>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuToggle.addEventListener('click', function() {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            navLinks.style.position = 'absolute';
+            navLinks.style.top = '100%';
+            navLinks.style.left = '0';
+            navLinks.style.width = '100%';
+            navLinks.style.background = 'rgba(102, 126, 234, 0.95)';
+            navLinks.style.flexDirection = 'column';
+            navLinks.style.padding = '1rem';
+            navLinks.style.gap = '1rem';
+        });
+
+        // Theme toggle functionality
+        function toggleTheme() {
+            const body = document.body;
+            const themeToggle = document.querySelector('.theme-toggle');
+            
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                themeToggle.textContent = '☀️';
+                themeToggle.title = 'الوضع النهاري';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                themeToggle.textContent = '🌙';
+                themeToggle.title = 'الوضع الليلي';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Load saved theme
+        function loadTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            const body = document.body;
+            const themeToggle = document.querySelector('.theme-toggle');
+            
+            if (savedTheme === 'dark') {
+                body.classList.add('dark-mode');
+                themeToggle.textContent = '☀️';
+                themeToggle.title = 'الوضع النهاري';
+            }
+        }
+
+        // Login modal functions
+        function showLoginModal() {
+            document.getElementById('loginModal').classList.add('show');
+        }
+
+        function hideLoginModal() {
+            document.getElementById('loginModal').classList.remove('show');
+        }
+
+        function handleLogin(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const username = formData.get('username');
+            const password = formData.get('password');
+            
+            // Simple demo authentication
+            if (username === 'admin' && password === 'admin') {
+                alert('تم تسجيل الدخول بنجاح!');
+                hideLoginModal();
+                event.target.reset();
+            } else {
+                alert('اسم المستخدم أو كلمة المرور غير صحيحة');
+            }
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('loginModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                hideLoginModal();
+            }
+        });
+
+        // Load theme on page load
+        document.addEventListener('DOMContentLoaded', loadTheme);
+
+        // Form submission
+        function handleSubmit(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+            
+            // Simulate form submission
+            alert('شكراً لك! تم إرسال طلبك بنجاح. سنتواصل معك قريباً.');
+            event.target.reset();
+        }
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(102, 126, 234, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+                header.style.backdropFilter = 'none';
+            }
+        });
+
+        // Animate elements on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.service-card, .portfolio-item, .feature-item, .testimonial-card, .pricing-card');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                } else {
+                    element.style.opacity = '0';
+                    element.style.transform = 'translateY(30px)';
+                }
+            });
+        }
+
+        // Set initial styles for animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.service-card, .portfolio-item, .feature-item, .testimonial-card, .pricing-card');
+            elements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = 'all 0.6s ease-out';
+            });
+        });
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
